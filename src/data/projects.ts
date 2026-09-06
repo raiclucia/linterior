@@ -136,10 +136,10 @@ export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
 }
 
-export function getNextProject(slug: string) {
+export function getNextProject(slug: string): Project {
   const index = projects.findIndex((project) => project.slug === slug);
-  if (index === -1) return projects[0];
-  return projects[(index + 1) % projects.length];
+  const next = index === -1 ? projects[0] : projects[(index + 1) % projects.length];
+  return next as Project;
 }
 
 export const processSteps = [
