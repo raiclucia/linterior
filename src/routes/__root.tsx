@@ -98,9 +98,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
-  validateSearch: (search: Record<string, unknown>) => ({
-    view: typeof search.view === "string" ? search.view : undefined,
-  }),
 });
 
 function RootShell({ children }: { children: ReactNode }) {
