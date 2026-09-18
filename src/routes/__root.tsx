@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -98,6 +98,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
+  validateSearch: (search: Record<string, unknown>) => ({
+    view: typeof search.view === "string" ? search.view : undefined,
+  }),
 });
 
 function RootShell({ children }: { children: ReactNode }) {
@@ -114,8 +117,58 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// Site gate: visitors see the "under development" notice; Lucia sees the full
+// site via the secret token (?view=…) or the Lovable preview URL.
+const UNLOCK_TOKEN = "lucia-9f2k";
+const UNLOCK_STORAGE_KEY = "linterior-preview-unlocked";
+
+function isPreviewHost() {
+  return typeof window !== "undefined" && window.location.hostname.includes("id-preview--");
+}
+
+function UnderConstruction() {
+  return (
+    <div className="flex min-h-screen items-center justify-center px-6">
+      <div className="max-w-md text-center">
+        <p className="wordmark text-2xl">L’Interior</p>
+        <h1 className="mt-10 text-3xl sm:text-4xl">The website is still under development.</h1>
+        <p className="mt-4 text-sm text-muted-foreground">Please check back soon.</p>
+        <a href="mailto:lucia@linterior.com" className="quiet-link mt-10 inline-block text-sm">
+          lucia@linterior.com
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { view } = Route.useSearch();
+  const [unlocked, setUnlocked] = useState(false);
+
+  useEffect(() => {
+    if (view === UNLOCK_TOKEN || isPreviewHost()) {
+      try {
+        sessionStorage.setItem(UNLOCK_STORAGE_KEY, "1");
+      } catch {
+        // storage unavailable — session-only unlock
+      }
+      setUnlocked(true);
+      if (view === UNLOCK_TOKEN) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    } else {
+      try {
+        setUnlocked(sessionStorage.getItem(UNLOCK_STORAGE_KEY) === "1");
+      } catch {
+        setUnlocked(false);
+      }
+    }
+  }, [view]);
+
+  if (!unlocked) {
+    return <UnderConstruction />;
+  }
 
   return (
     <QueryClientProvider client={queryClient}>
