@@ -140,18 +140,19 @@ function UnderConstruction() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const { view } = Route.useSearch();
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
-    if (view === UNLOCK_TOKEN || isPreviewHost()) {
+    const hasToken =
+      new URLSearchParams(window.location.search).get("view") === UNLOCK_TOKEN;
+    if (hasToken || isPreviewHost()) {
       try {
         sessionStorage.setItem(UNLOCK_STORAGE_KEY, "1");
       } catch {
         // storage unavailable — session-only unlock
       }
       setUnlocked(true);
-      if (view === UNLOCK_TOKEN) {
+      if (hasToken) {
         window.history.replaceState(null, "", window.location.pathname);
       }
     } else {
@@ -161,7 +162,7 @@ function RootComponent() {
         setUnlocked(false);
       }
     }
-  }, [view]);
+  }, []);
 
   if (!unlocked) {
     return <UnderConstruction />;
