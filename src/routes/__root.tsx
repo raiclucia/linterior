@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import logo from "@/assets/linterior-logo.png";
 
 function NotFoundComponent() {
   return (
@@ -91,7 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
@@ -127,7 +128,7 @@ function UnderConstruction() {
   return (
     <div className="flex min-h-screen items-center justify-center px-6">
       <div className="max-w-md text-center">
-        <p className="wordmark text-2xl">L’Interior</p>
+        <img src={logo} alt="L’Interior" width={795} height={495} className="mx-auto w-44" />
         <h1 className="mt-10 text-3xl sm:text-4xl">The website is still under development.</h1>
         <p className="mt-4 text-sm text-muted-foreground">Please check back soon.</p>
         <a href="mailto:lucia@linterior.com" className="quiet-link mt-10 inline-block text-sm">
@@ -143,9 +144,12 @@ function RootComponent() {
   const [unlocked, setUnlocked] = useState(false);
 
   useEffect(() => {
-    const hasToken =
-      new URLSearchParams(window.location.search).get("view") === UNLOCK_TOKEN;
-    if (hasToken || isPreviewHost()) {
+    const params = new URLSearchParams(window.location.search);
+    // "?construction" forces the visitor view so the page can be previewed
+    // even on hosts that are normally unlocked (e.g. the Lovable preview URL).
+    const forceGate = params.has("construction");
+    const hasToken = params.get("view") === UNLOCK_TOKEN;
+    if (!forceGate && (hasToken || isPreviewHost())) {
       try {
         sessionStorage.setItem(UNLOCK_STORAGE_KEY, "1");
       } catch {
@@ -156,6 +160,13 @@ function RootComponent() {
         window.history.replaceState(null, "", window.location.pathname);
       }
     } else {
+      if (forceGate) {
+        try {
+          sessionStorage.removeItem(UNLOCK_STORAGE_KEY);
+        } catch {
+          // ignore storage failures
+        }
+      }
       try {
         setUnlocked(sessionStorage.getItem(UNLOCK_STORAGE_KEY) === "1");
       } catch {
