@@ -131,8 +131,8 @@ function UnderConstruction() {
         <img src={logo} alt="L’Interior" width={795} height={495} className="mx-auto w-44" />
         <h1 className="mt-10 text-3xl sm:text-4xl">The website is still under development.</h1>
         <p className="mt-4 text-sm text-muted-foreground">Please check back soon.</p>
-        <a href="mailto:lucia@linterior.com" className="quiet-link mt-10 inline-block text-sm">
-          lucia@linterior.com
+        <a href="mailto:raic.lucia@gmail.com" className="quiet-link mt-10 inline-block text-sm">
+          raic.lucia@gmail.com
         </a>
       </div>
     </div>

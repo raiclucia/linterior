@@ -33,8 +33,8 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3 text-sm md:justify-end">
-            <a href="mailto:lucia@linterior.com" className="quiet-link">
-              lucia@linterior.com
+            <a href="mailto:raic.lucia@gmail.com" className="quiet-link">
+              raic.lucia@gmail.com
             </a>
             <a
               href="https://instagram.com/linterior.studio"
