@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
+import logo from "@/assets/linterior-logo.png";
+
 const nav = [
   { to: "/work", label: "Work" },
   { to: "/process", label: "Process" },
@@ -13,7 +15,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-16">
         <div className="grid gap-10 pt-12 md:grid-cols-3 md:items-start">
           <p className="text-sm text-muted-foreground">
-            <span className="wordmark text-base text-foreground">L’Interior</span>
+            <img src={logo} alt="L’Interior" width={795} height={495} className="inline-block h-5 w-auto align-[-3px]" />
             <span className="mx-2">—</span>
             Interior design, Zagreb
           </p>
@@ -31,8 +33,8 @@ export function Footer() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-x-4 gap-y-3 text-sm md:justify-end">
-            <a href="mailto:lucia@linterior.com" className="quiet-link">
-              lucia@linterior.com
+            <a href="mailto:raic.lucia@gmail.com" className="quiet-link">
+              raic.lucia@gmail.com
             </a>
             <a
               href="https://instagram.com/linterior.studio"

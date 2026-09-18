@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import heroImage from "@/assets/hero.jpg";
+import logo from "@/assets/linterior-logo.png";
 import { Reveal } from "@/components/site/Reveal";
 import { processSteps, projects } from "@/data/projects";
 
@@ -39,7 +40,7 @@ function Home() {
         />
         <div className="mx-auto max-w-[1500px] px-6 py-14 sm:px-10 sm:py-20 lg:px-16">
           <Reveal>
-            <p className="wordmark text-4xl sm:text-6xl">L’Interior</p>
+            <img src={logo} alt="L’Interior" width={795} height={495} className="w-52 sm:w-72" />
             <p className="label mt-4">Interior design by Lucia Raić — Zagreb</p>
           </Reveal>
           <Reveal delay={120} className="mt-10 grid gap-8 md:grid-cols-12">

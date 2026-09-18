@@ -71,8 +71,8 @@ function ContactPage() {
             <div>
               <dt className="label">Email</dt>
               <dd className="mt-2">
-                <a href="mailto:lucia@linterior.com" className="quiet-link text-lg sm:text-xl">
-                  lucia@linterior.com
+                <a href="mailto:raic.lucia@gmail.com" className="quiet-link text-lg sm:text-xl">
+                  raic.lucia@gmail.com
                 </a>
               </dd>
             </div>
