@@ -6,3 +6,6 @@
 - [x] Give the user a preview of the under-development page
 - [x] Replace placeholder email with raic.lucia@gmail.com (contact page, footer, under-development page)
 - [ ] Publish the gate + logo + email update live (security scan first)
+- [ ] Extract and identify images from the uploaded portfolio
+- [ ] Replace sample projects with the portfolio images and remove excluded year references
+- [ ] Add a downloadable portfolio without the excluded year and verify project views
