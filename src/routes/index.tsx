@@ -1,13 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import heroImage from "@/assets/hero.jpg";
 import logo from "@/assets/linterior-logo.png";
 import { Reveal } from "@/components/site/Reveal";
 import { processSteps, projects } from "@/data/projects";
 
+const heroImage = projects[0]?.image;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "L’Interior — Interior design by Lucia Raić, Zagreb" },
       {
         name: "description",
@@ -33,7 +36,7 @@ function Home() {
       <section className="relative">
         <img
           src={heroImage}
-          alt="Living and dining area of a restored 1930s apartment in Zagreb"
+          alt="Projekt Knežija — vizualizacija dnevnog boravka"
           width={1920}
           height={1088}
           className="h-[68vh] min-h-[420px] w-full object-cover sm:h-[78vh]"
@@ -79,7 +82,7 @@ function Home() {
                 to="/work/$slug"
                 params={{ slug: project.slug }}
                 className="group block"
-                aria-label={`${project.name}, ${project.location}`}
+                aria-label={project.name}
               >
                 <div className="aspect-[4/3] overflow-hidden bg-muted">
                   <img
@@ -94,10 +97,7 @@ function Home() {
                 <h3 className="mt-5 text-xl transition-colors group-hover:text-accent">
                   {project.name}
                 </h3>
-                <p className="label mt-2">
-                  {project.location} — {project.year} — {project.size}
-                </p>
-                <p className="mt-3 text-sm text-muted-foreground">{project.description}</p>
+              <p className="label mt-2">{project.type}</p>
               </Link>
             </Reveal>
           ))}

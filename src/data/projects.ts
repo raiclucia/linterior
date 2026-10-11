@@ -1,145 +1,600 @@
-import britanac from "@/assets/project-britanac.jpg";
-import samobor from "@/assets/project-samobor.jpg";
-import marticeva from "@/assets/project-marticeva.jpg";
-import cafe from "@/assets/project-cafe.jpg";
-import kvaternikov from "@/assets/project-kvaternikov.jpg";
-import kastela from "@/assets/project-kastela.jpg";
+import portfolio_25 from "@/assets/portfolio/portfolio-25.jpg.asset.json";
+import portfolio_26 from "@/assets/portfolio/portfolio-26.jpg.asset.json";
+import portfolio_27 from "@/assets/portfolio/portfolio-27.jpg.asset.json";
+import portfolio_30 from "@/assets/portfolio/portfolio-30.jpg.asset.json";
+import portfolio_32 from "@/assets/portfolio/portfolio-32.jpg.asset.json";
+import portfolio_28 from "@/assets/portfolio/portfolio-28.jpg.asset.json";
+import portfolio_31 from "@/assets/portfolio/portfolio-31.jpg.asset.json";
+import portfolio_29 from "@/assets/portfolio/portfolio-29.jpg.asset.json";
+import portfolio_33 from "@/assets/portfolio/portfolio-33.jpg.asset.json";
+import portfolio_34 from "@/assets/portfolio/portfolio-34.jpg.asset.json";
+import portfolio_38 from "@/assets/portfolio/portfolio-38.jpg.asset.json";
+import portfolio_39 from "@/assets/portfolio/portfolio-39.jpg.asset.json";
+import portfolio_40 from "@/assets/portfolio/portfolio-40.jpg.asset.json";
+import portfolio_41 from "@/assets/portfolio/portfolio-41.jpg.asset.json";
+import portfolio_42 from "@/assets/portfolio/portfolio-42.jpg.asset.json";
+import portfolio_43 from "@/assets/portfolio/portfolio-43.jpg.asset.json";
+import portfolio_44 from "@/assets/portfolio/portfolio-44.jpg.asset.json";
+import portfolio_45 from "@/assets/portfolio/portfolio-45.jpg.asset.json";
+import portfolio_49 from "@/assets/portfolio/portfolio-49.jpg.asset.json";
+import portfolio_50 from "@/assets/portfolio/portfolio-50.jpg.asset.json";
+import portfolio_51 from "@/assets/portfolio/portfolio-51.jpg.asset.json";
+import portfolio_52 from "@/assets/portfolio/portfolio-52.jpg.asset.json";
+import portfolio_53 from "@/assets/portfolio/portfolio-53.jpg.asset.json";
+import portfolio_54 from "@/assets/portfolio/portfolio-54.jpg.asset.json";
+import portfolio_55 from "@/assets/portfolio/portfolio-55.jpg.asset.json";
+import portfolio_56 from "@/assets/portfolio/portfolio-56.jpg.asset.json";
+import portfolio_57 from "@/assets/portfolio/portfolio-57.jpg.asset.json";
+import portfolio_58 from "@/assets/portfolio/portfolio-58.jpg.asset.json";
+import portfolio_62 from "@/assets/portfolio/portfolio-62.jpg.asset.json";
+import portfolio_63 from "@/assets/portfolio/portfolio-63.jpg.asset.json";
+import portfolio_64 from "@/assets/portfolio/portfolio-64.jpg.asset.json";
+import portfolio_65 from "@/assets/portfolio/portfolio-65.jpg.asset.json";
+import portfolio_66 from "@/assets/portfolio/portfolio-66.jpg.asset.json";
+import portfolio_70 from "@/assets/portfolio/portfolio-70.jpg.asset.json";
+import portfolio_71 from "@/assets/portfolio/portfolio-71.jpg.asset.json";
+import portfolio_72 from "@/assets/portfolio/portfolio-72.jpg.asset.json";
+import portfolio_73 from "@/assets/portfolio/portfolio-73.jpg.asset.json";
+import portfolio_74 from "@/assets/portfolio/portfolio-74.jpg.asset.json";
+import portfolio_75 from "@/assets/portfolio/portfolio-75.jpg.asset.json";
+import portfolio_76 from "@/assets/portfolio/portfolio-76.jpg.asset.json";
+import portfolio_77 from "@/assets/portfolio/portfolio-77.jpg.asset.json";
+import portfolio_78 from "@/assets/portfolio/portfolio-78.jpg.asset.json";
+import portfolio_79 from "@/assets/portfolio/portfolio-79.jpg.asset.json";
+import portfolio_83 from "@/assets/portfolio/portfolio-83.jpg.asset.json";
+import portfolio_84 from "@/assets/portfolio/portfolio-84.jpg.asset.json";
+import portfolio_85 from "@/assets/portfolio/portfolio-85.jpg.asset.json";
+import portfolio_86 from "@/assets/portfolio/portfolio-86.jpg.asset.json";
+import portfolio_87 from "@/assets/portfolio/portfolio-87.jpg.asset.json";
+import portfolio_88 from "@/assets/portfolio/portfolio-88.jpg.asset.json";
+import portfolio_92 from "@/assets/portfolio/portfolio-92.jpg.asset.json";
+import portfolio_93 from "@/assets/portfolio/portfolio-93.jpg.asset.json";
+import portfolio_94 from "@/assets/portfolio/portfolio-94.jpg.asset.json";
+import portfolio_95 from "@/assets/portfolio/portfolio-95.jpg.asset.json";
+import portfolio_96 from "@/assets/portfolio/portfolio-96.jpg.asset.json";
+import portfolio_97 from "@/assets/portfolio/portfolio-97.jpg.asset.json";
+import portfolio_98 from "@/assets/portfolio/portfolio-98.jpg.asset.json";
+import portfolio_102 from "@/assets/portfolio/portfolio-102.jpg.asset.json";
+import portfolio_103 from "@/assets/portfolio/portfolio-103.jpg.asset.json";
+import portfolio_104 from "@/assets/portfolio/portfolio-104.jpg.asset.json";
+import portfolio_105 from "@/assets/portfolio/portfolio-105.jpg.asset.json";
+import portfolio_106 from "@/assets/portfolio/portfolio-106.jpg.asset.json";
+import portfolio_107 from "@/assets/portfolio/portfolio-107.jpg.asset.json";
+import portfolio_108 from "@/assets/portfolio/portfolio-108.jpg.asset.json";
+import portfolio_109 from "@/assets/portfolio/portfolio-109.jpg.asset.json";
+import portfolio_110 from "@/assets/portfolio/portfolio-110.jpg.asset.json";
+import portfolioAsset from "@/assets/portfolio/linterior-portfolio.pdf.asset.json";
 
-export type ProjectType = "Apartment" | "House" | "Commercial";
-
-export type Project = {
-  slug: string;
-  name: string;
-  location: string;
-  year: string;
-  type: ProjectType;
-  size: string;
-  scope: string;
-  description: string;
-  metaLine: string;
-  image: string;
-  alt: string;
-  brief: string;
-  did: string;
-};
-
-export const stageCaptions = [
-  "Measured survey of the existing layout",
-  "Floor plan, third revision",
-  "Moodboard — oak, lime plaster, brushed brass",
-  "3D visualization of the kitchen and dining area",
-  "Finished space",
-];
-
+export const portfolioDownload = portfolioAsset.url;
+export type ProjectType = "Apartment" | "Commercial" | "Residential";
+export type PortfolioImage = { src: string; width: number; height: number; alt: string; kind: "plan" | "render" };
+export type Project = { slug: string; name: string; type: ProjectType; image: string; alt: string; gallery: PortfolioImage[] };
 export const projects: Project[] = [
   {
-    slug: "apartment-britanac",
-    name: "Apartment Britanac",
-    location: "Zagreb",
-    year: "2025",
-    type: "Apartment",
-    size: "78 m²",
-    scope: "Full design and documentation",
-    description: "A 1930s flat opened up for a couple who cook constantly.",
-    metaLine: "Zagreb, Britanac · 2025 · Apartment · 78 m² · Full design and documentation",
-    image: britanac,
-    alt: "Kitchen opened to the dining room in a restored 1930s Zagreb apartment",
-    brief:
-      "The owners had lived here for six years and had stopped using half of it. The kitchen was closed off from everything, the hallway swallowed four square metres, and there was nowhere to put anything. They wanted the flat to feel like one connected space without losing the character of the original layout.",
-    did: "We removed the wall between the kitchen and the dining room and rebuilt the hallway as storage rather than empty corridor. The original parquet was restored and the new joinery was kept low and quiet so the ceiling height stays the thing you notice. Lighting was planned room by room instead of one fixture in the middle of each ceiling.",
+    "slug": "projekt-knezija",
+    "name": "Projekt Knežija",
+    "type": "Apartment",
+    "image": portfolio_27.url,
+    "alt": "Projekt Knežija — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_25.url,
+        "width": 576,
+        "height": 296,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_26.url,
+        "width": 576,
+        "height": 296,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_27.url,
+        "width": 546,
+        "height": 293,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_28.url,
+        "width": 576,
+        "height": 296,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_29.url,
+        "width": 532,
+        "height": 294,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_30.url,
+        "width": 547,
+        "height": 295,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_31.url,
+        "width": 542,
+        "height": 295,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_32.url,
+        "width": 535,
+        "height": 294,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_33.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_34.url,
+        "width": 461,
+        "height": 260,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_38.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_39.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_40.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_41.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_42.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_43.url,
+        "width": 675,
+        "height": 457,
+        "alt": "Projekt Knežija — tlocrt",
+        "kind": "plan"
+      },
+      {
+        "src": portfolio_44.url,
+        "width": 487,
+        "height": 602,
+        "alt": "Projekt Knežija — tlocrt",
+        "kind": "plan"
+      },
+      {
+        "src": portfolio_45.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Knežija — vizualizacija interijera",
+        "kind": "render"
+      }
+    ]
   },
   {
-    slug: "house-samobor",
-    name: "House Samobor",
-    location: "Samobor",
-    year: "2025",
-    type: "House",
-    size: "165 m²",
-    scope: "Full design and documentation",
-    description:
-      "A family home reorganised around the way three children actually move through it.",
-    metaLine: "Samobor · 2025 · House · 165 m² · Full design and documentation",
-    image: samobor,
-    alt: "Open family living room with wood beams and soft green upholstery in a house near Samobor",
-    brief:
-      "A family of five had outgrown the way the ground floor was divided. Rooms were used as corridors, and everything the children needed daily was stored somewhere else.",
-    did: "The ground floor was reorganised around the paths the family already walked, with storage placed where things are actually dropped. Durable finishes throughout, and a living area that stays open without becoming one loud room.",
+    "slug": "projekt-trnsko",
+    "name": "Projekt Trnsko",
+    "type": "Apartment",
+    "image": portfolio_58.url,
+    "alt": "Projekt Trnsko — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_49.url,
+        "width": 461,
+        "height": 260,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_50.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_51.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_52.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_53.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_54.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_55.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_56.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_57.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_58.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_62.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_63.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_64.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_65.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_66.url,
+        "width": 809,
+        "height": 638,
+        "alt": "Projekt Trnsko — tlocrt",
+        "kind": "plan"
+      }
+    ]
   },
   {
-    slug: "studio-marticeva",
-    name: "Studio Martićeva",
-    location: "Zagreb",
-    year: "2024",
-    type: "Apartment",
-    size: "41 m²",
-    scope: "Full design and documentation",
-    description: "Every square metre earning its place in a small rental conversion.",
-    metaLine: "Zagreb, Martićeva · 2024 · Apartment · 41 m² · Full design and documentation",
-    image: marticeva,
-    alt: "Compact light oak kitchen and built-in storage in a small studio apartment",
-    brief:
-      "A small flat destined for long-term rental, where every wasted centimetre would be felt daily by whoever lived there.",
-    did: "Built-in joinery does the work of furniture: storage to the ceiling, a kitchen that closes down, and a sleeping area that reads as separate without a wall.",
+    "slug": "projekt-cirkovljanska",
+    "name": "Projekt Cirkovljanska",
+    "type": "Apartment",
+    "image": portfolio_73.url,
+    "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_70.url,
+        "width": 404,
+        "height": 227,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_71.url,
+        "width": 404,
+        "height": 227,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_72.url,
+        "width": 615,
+        "height": 346,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_73.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_74.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_75.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_76.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_77.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_78.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_79.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt Cirkovljanska — tlocrt",
+        "kind": "plan"
+      }
+    ]
   },
   {
-    slug: "cafe-tresnjevka",
-    name: "Café Trešnjevka",
-    location: "Zagreb",
-    year: "2024",
-    type: "Commercial",
-    size: "92 m²",
-    scope: "Full design and documentation",
-    description:
-      "A neighbourhood café that had to work at eight in the morning and eight at night.",
-    metaLine: "Zagreb, Trešnjevka · 2024 · Commercial · 92 m² · Full design and documentation",
-    image: cafe,
-    alt: "Neighbourhood café interior with terracotta walls, bentwood chairs and a marble counter",
-    brief:
-      "A café serving two very different crowds in one room, with a service counter that had to keep queues moving at the busiest hour.",
-    did: "The counter was repositioned to shorten the staff's path, seating was zoned for quick coffee and long evenings, and lighting was set on scenes that shift the room from morning to night.",
+    "slug": "skola-gitare",
+    "name": "Projekt škola gitare",
+    "type": "Commercial",
+    "image": portfolio_83.url,
+    "alt": "Projekt škola gitare — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_83.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt škola gitare — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_84.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt škola gitare — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_85.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt škola gitare — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_86.url,
+        "width": 434,
+        "height": 564,
+        "alt": "Projekt škola gitare — tlocrt",
+        "kind": "plan"
+      }
+    ]
   },
   {
-    slug: "apartment-kvaternikov-trg",
-    name: "Apartment Kvaternikov trg",
-    location: "Zagreb",
-    year: "2024",
-    type: "Apartment",
-    size: "63 m²",
-    scope: "Full design and documentation",
-    description: "Warm materials and a lot of storage, hidden where you don't see it.",
-    metaLine: "Zagreb, Kvaternikov trg · 2024 · Apartment · 63 m² · Full design and documentation",
-    image: kvaternikov,
-    alt: "Living room with full-height walnut joinery, soft textiles and concealed storage",
-    brief:
-      "The owners wanted a calm apartment that could still absorb everything two people accumulate, without the flat looking like a storage unit.",
-    did: "Full-height joinery runs the length of the living area in a single warm tone, with open shelving used sparingly so the rest disappears into the wall.",
+    "slug": "projekt-adzijina",
+    "name": "Projekt Adžijina",
+    "type": "Apartment",
+    "image": portfolio_87.url,
+    "alt": "Projekt Adžijina — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_87.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Adžijina — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_88.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt Adžijina — vizualizacija interijera",
+        "kind": "render"
+      }
+    ]
   },
   {
-    slug: "house-kastela",
-    name: "House Kaštela",
-    location: "Kaštela",
-    year: "2023",
-    type: "House",
-    size: "210 m²",
-    scope: "Full design and documentation",
-    description: "A coastal house kept cool, light and easy to clean.",
-    metaLine: "Kaštela · 2023 · House · 210 m² · Full design and documentation",
-    image: kastela,
-    alt: "Bright coastal living room with pale stone floor opening onto a shaded terrace and sea view",
-    brief:
-      "A coastal house used year-round by the family and by guests in summer, where salt, sand and strong light are part of daily life.",
-    did: "Pale stone, lime plaster and linen keep the interior cool, with finishes chosen for how easily they wash down and how well they age near the sea.",
+    "slug": "studentski-dom",
+    "name": "Projekt studentski dom",
+    "type": "Residential",
+    "image": portfolio_95.url,
+    "alt": "Projekt studentski dom — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_92.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_93.url,
+        "width": 768,
+        "height": 432,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_94.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_95.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_96.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_97.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt studentski dom — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_98.url,
+        "width": 597,
+        "height": 321,
+        "alt": "Projekt studentski dom — tlocrt",
+        "kind": "plan"
+      }
+    ]
   },
+  {
+    "slug": "vizazisticki-studio",
+    "name": "Projekt vizažistički studio",
+    "type": "Commercial",
+    "image": portfolio_104.url,
+    "alt": "Projekt vizažistički studio — vizualizacija interijera",
+    "gallery": [
+      {
+        "src": portfolio_102.url,
+        "width": 576,
+        "height": 297,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_103.url,
+        "width": 576,
+        "height": 296,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_104.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_105.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_106.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_107.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_108.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_109.url,
+        "width": 576,
+        "height": 324,
+        "alt": "Projekt vizažistički studio — vizualizacija interijera",
+        "kind": "render"
+      },
+      {
+        "src": portfolio_110.url,
+        "width": 825,
+        "height": 553,
+        "alt": "Projekt vizažistički studio — tlocrt",
+        "kind": "plan"
+      }
+    ]
+  }
 ];
-
-export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
-}
-
+export function getProject(slug: string) { return projects.find(project => project.slug === slug); }
 export function getNextProject(slug: string): Project {
-  const index = projects.findIndex((project) => project.slug === slug);
-  const next = index === -1 ? projects[0] : projects[(index + 1) % projects.length];
-  return next as Project;
+ const index = projects.findIndex(project => project.slug === slug);
+ const next = projects[(index + 1) % projects.length];
+ if (!next) throw new Error("Portfolio contains no projects");
+ return next;
 }
 
 export const processSteps = [
