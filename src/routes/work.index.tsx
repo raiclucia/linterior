@@ -79,7 +79,7 @@ function WorkPage() {
               to="/work/$slug"
               params={{ slug: project.slug }}
               className="group block"
-              aria-label={`${project.name}, ${project.location}`}
+              aria-label={project.name}
             >
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img
