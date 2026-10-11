@@ -6,6 +6,8 @@ import { processSteps } from "@/data/projects";
 export const Route = createFileRoute("/process")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Process — L’Interior" },
       {
         name: "description",

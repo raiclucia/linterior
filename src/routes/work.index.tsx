@@ -2,15 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 import { Reveal } from "@/components/site/Reveal";
-import { projects, type ProjectType } from "@/data/projects";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { projects, portfolioDownload, type ProjectType } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
-const filters = ["All", "Apartment", "House", "Commercial"] as const;
+const filters = ["All", "Apartment", "Residential", "Commercial"] as const;
 type Filter = (typeof filters)[number];
 
 export const Route = createFileRoute("/work/")({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { title: "Work — L’Interior" },
       {
         name: "description",
@@ -46,20 +50,25 @@ function WorkPage() {
         </p>
       </Reveal>
 
+      <Button asChild variant="link" className="quiet-link mt-8 h-auto p-0">
+        <a href={portfolioDownload} download="linterior-portfolio.pdf"><Download /> Download portfolio · PDF</a>
+      </Button>
+
       <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3" role="group" aria-label="Filter projects by type">
         {filters.map((filter) => (
-          <button
+          <Button
             key={filter}
             type="button"
             onClick={() => setActive(filter)}
             aria-pressed={active === filter}
+            variant="ghost"
             className={cn(
-              "label transition-colors hover:text-accent",
+              "label h-auto p-0 transition-colors hover:bg-transparent hover:text-accent",
               active === filter && "text-accent",
             )}
           >
             {filter}
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -86,10 +95,7 @@ function WorkPage() {
                 {project.name}
               </h2>
               <p className="label mt-2">
-                {project.location} — {project.year} — {project.type} — {project.size}
-              </p>
-              <p className="mt-3 max-w-prose text-sm text-muted-foreground">
-                {project.description}
+                {project.type}
               </p>
             </Link>
           </Reveal>

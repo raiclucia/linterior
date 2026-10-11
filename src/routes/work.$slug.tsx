@@ -1,7 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
 import { Reveal } from "@/components/site/Reveal";
-import { getNextProject, getProject, stageCaptions } from "@/data/projects";
+import { ProjectGallery } from "@/components/site/ProjectGallery";
+import { getNextProject, getProject } from "@/data/projects";
 
 export const Route = createFileRoute("/work/$slug")({
   loader: ({ params }) => {
@@ -17,9 +18,11 @@ export const Route = createFileRoute("/work/$slug")({
     }
     const { project } = loaderData;
     const title = `${project.name} — L’Interior`;
-    const description = `${project.description} An interior design project by Lucia Raić of L’Interior in ${project.location}.`;
+    const description = `${project.name}: interior design portfolio by Lucia Raić of L’Interior. Interior visualizations and project gallery.`;
     return {
       meta: [
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary_large_image" },
         { title },
         { name: "description", content: description },
         { property: "og:title", content: title },
@@ -38,7 +41,7 @@ function ProjectDetail() {
       <Reveal>
         <p className="label">Work</p>
         <h1 className="mt-4 text-4xl sm:text-5xl">{project.name}</h1>
-        <p className="label mt-6">{project.metaLine}</p>
+        <p className="label mt-6">{project.type}</p>
       </Reveal>
 
       <Reveal className="mt-12">
@@ -48,51 +51,17 @@ function ProjectDetail() {
             alt={project.alt}
             width={1400}
             height={1050}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
       </Reveal>
 
-      <div className="mt-20 grid gap-12 md:grid-cols-12">
-        <Reveal className="md:col-span-5">
-          <h2 className="text-2xl">The brief</h2>
-        </Reveal>
-        <Reveal className="md:col-span-6 md:col-start-7" delay={80}>
-          <p className="max-w-prose text-muted-foreground">{project.brief}</p>
-        </Reveal>
-      </div>
-
-      <div className="mt-16 grid gap-12 md:grid-cols-12">
-        <Reveal className="md:col-span-5">
-          <h2 className="text-2xl">What we did</h2>
-        </Reveal>
-        <Reveal className="md:col-span-6 md:col-start-7" delay={80}>
-          <p className="max-w-prose text-muted-foreground">{project.did}</p>
-        </Reveal>
-      </div>
-
       <section className="mt-24">
         <Reveal>
-          <h2 className="text-2xl">Stages</h2>
+          <h2 className="text-2xl">Gallery</h2>
         </Reveal>
-        <div className="mt-10 grid gap-x-10 gap-y-14 sm:grid-cols-2">
-          {stageCaptions.map((caption, index) => (
-            <Reveal key={caption} delay={(index % 2) * 100}>
-              <figure>
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={project.image}
-                    alt={`${project.name} — ${caption}`}
-                    width={1400}
-                    height={1050}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <figcaption className="label mt-4">{caption}</figcaption>
-              </figure>
-            </Reveal>
-          ))}
+        <div className="mt-10">
+          <ProjectGallery images={project.gallery} name={project.name} />
         </div>
       </section>
 
