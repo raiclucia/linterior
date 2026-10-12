@@ -11,4 +11,4 @@
 - [x] Add a downloadable portfolio without the excluded year and verify project views
 
 - [x] Replace matching Knežija gallery images with ten original uploads and use the first as homepage cover
-- [ ] Replace matching Knežija images with the seven additional original uploads
+- [x] Replace matching Knežija images with the seven additional original uploads
