@@ -9,3 +9,6 @@
 - [x] Extract and identify images from the uploaded portfolio
 - [x] Replace sample projects with the portfolio images and remove excluded year references
 - [x] Add a downloadable portfolio without the excluded year and verify project views
+
+- [x] Replace matching Knežija gallery images with ten original uploads and use the first as homepage cover
+- [x] Replace matching Knežija images with the seven additional original uploads
