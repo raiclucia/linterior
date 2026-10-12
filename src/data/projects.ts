@@ -1,13 +1,13 @@
-import portfolio_25 from "@/assets/portfolio/portfolio-25.jpg.asset.json";
-import portfolio_26 from "@/assets/portfolio/portfolio-26.jpg.asset.json";
-import portfolio_27 from "@/assets/portfolio/portfolio-27.jpg.asset.json";
-import portfolio_30 from "@/assets/portfolio/portfolio-30.jpg.asset.json";
-import portfolio_32 from "@/assets/portfolio/portfolio-32.jpg.asset.json";
-import portfolio_28 from "@/assets/portfolio/portfolio-28.jpg.asset.json";
-import portfolio_31 from "@/assets/portfolio/portfolio-31.jpg.asset.json";
-import portfolio_29 from "@/assets/portfolio/portfolio-29.jpg.asset.json";
-import portfolio_33 from "@/assets/portfolio/portfolio-33.jpg.asset.json";
-import portfolio_34 from "@/assets/portfolio/portfolio-34.jpg.asset.json";
+import knezija_1 from "@/assets/portfolio/knezija1.jpeg.asset.json";
+import knezija_2 from "@/assets/portfolio/knezija2.jpeg.asset.json";
+import knezija_3 from "@/assets/portfolio/knezija3.jpeg.asset.json";
+import knezija_6 from "@/assets/portfolio/knezija6.jpeg.asset.json";
+import knezija_8 from "@/assets/portfolio/knezija8.jpeg.asset.json";
+import knezija_4 from "@/assets/portfolio/knezija4.jpeg.asset.json";
+import knezija_7 from "@/assets/portfolio/knezija7.jpeg.asset.json";
+import knezija_5 from "@/assets/portfolio/knezija5.jpeg.asset.json";
+import knezija_9 from "@/assets/portfolio/knezija9.jpeg.asset.json";
+import knezija_10 from "@/assets/portfolio/knezija10.jpeg.asset.json";
 import portfolio_38 from "@/assets/portfolio/portfolio-38.jpg.asset.json";
 import portfolio_39 from "@/assets/portfolio/portfolio-39.jpg.asset.json";
 import portfolio_40 from "@/assets/portfolio/portfolio-40.jpg.asset.json";
@@ -74,76 +74,76 @@ export const projects: Project[] = [
     "slug": "projekt-knezija",
     "name": "Projekt Knežija",
     "type": "Apartment",
-    "image": portfolio_27.url,
+    "image": knezija_1.url,
     "alt": "Projekt Knežija — vizualizacija interijera",
     "gallery": [
       {
-        "src": portfolio_25.url,
-        "width": 576,
-        "height": 296,
+        "src": knezija_1.url,
+        "width": 1432,
+        "height": 736,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_26.url,
-        "width": 576,
-        "height": 296,
+        "src": knezija_2.url,
+        "width": 1432,
+        "height": 736,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_27.url,
-        "width": 546,
-        "height": 293,
+        "src": knezija_3.url,
+        "width": 1401,
+        "height": 752,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_28.url,
-        "width": 576,
-        "height": 296,
+        "src": knezija_4.url,
+        "width": 1432,
+        "height": 736,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_29.url,
-        "width": 532,
-        "height": 294,
+        "src": knezija_5.url,
+        "width": 1390,
+        "height": 768,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_30.url,
-        "width": 547,
-        "height": 295,
+        "src": knezija_6.url,
+        "width": 1394,
+        "height": 752,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_31.url,
-        "width": 542,
-        "height": 295,
+        "src": knezija_7.url,
+        "width": 1382,
+        "height": 752,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_32.url,
-        "width": 535,
-        "height": 294,
+        "src": knezija_8.url,
+        "width": 1398,
+        "height": 768,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_33.url,
-        "width": 768,
-        "height": 432,
+        "src": knezija_9.url,
+        "width": 1365,
+        "height": 768,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
       {
-        "src": portfolio_34.url,
-        "width": 461,
-        "height": 260,
+        "src": knezija_10.url,
+        "width": 1362,
+        "height": 768,
         "alt": "Projekt Knežija — vizualizacija interijera",
         "kind": "render"
       },
