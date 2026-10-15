@@ -71,329 +71,329 @@ export type PortfolioImage = { src: string; width: number; height: number; alt: 
 export type Project = { slug: string; name: string; type: ProjectType; image: string; alt: string; gallery: PortfolioImage[] };
 export const projects: Project[] = [
   {
-    "slug": "projekt-knezija",
-    "name": "Projekt Knežija",
+    "slug": "projekt-centar",
+    "name": "Projekt Centar",
     "type": "Apartment",
     "image": knezija_1.url,
-    "alt": "Projekt Knežija — vizualizacija interijera",
+    "alt": "Projekt Centar — vizualizacija interijera",
     "gallery": [
       {
         "src": knezija_1.url,
         "width": 1432,
         "height": 736,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_2.url,
         "width": 1432,
         "height": 736,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_3.url,
         "width": 1401,
         "height": 752,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_4.url,
         "width": 1432,
         "height": 736,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_5.url,
         "width": 1390,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_6.url,
         "width": 1394,
         "height": 752,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_7.url,
         "width": 1382,
         "height": 752,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_8.url,
         "width": 1398,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_9.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_10.url,
         "width": 1362,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_11.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_12.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_13.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_14.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_42.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": knezija_15.url,
         "width": 1253,
         "height": 848,
-        "alt": "Projekt Knežija — tlocrt",
+        "alt": "Projekt Centar — tlocrt",
         "kind": "plan"
       },
       {
         "src": knezija_16.url,
         "width": 928,
         "height": 1147,
-        "alt": "Projekt Knežija — tlocrt",
+        "alt": "Projekt Centar — tlocrt",
         "kind": "plan"
       },
       {
         "src": knezija_17.url,
         "width": 1365,
         "height": 768,
-        "alt": "Projekt Knežija — vizualizacija interijera",
+        "alt": "Projekt Centar — vizualizacija interijera",
         "kind": "render"
       }
     ]
   },
   {
-    "slug": "projekt-trnsko",
-    "name": "Projekt Trnsko",
+    "slug": "projekt-novi-zg",
+    "name": "Projekt Novi Zg",
     "type": "Apartment",
     "image": portfolio_58.url,
-    "alt": "Projekt Trnsko — vizualizacija interijera",
+    "alt": "Projekt Novi Zg — vizualizacija interijera",
     "gallery": [
       {
         "src": portfolio_49.url,
         "width": 461,
         "height": 260,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_50.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_51.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_52.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_53.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_54.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_55.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_56.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_57.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_58.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_62.url,
         "width": 768,
         "height": 432,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_63.url,
         "width": 768,
         "height": 432,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_64.url,
         "width": 768,
         "height": 432,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_65.url,
         "width": 768,
         "height": 432,
-        "alt": "Projekt Trnsko — vizualizacija interijera",
+        "alt": "Projekt Novi Zg — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_66.url,
         "width": 809,
         "height": 638,
-        "alt": "Projekt Trnsko — tlocrt",
+        "alt": "Projekt Novi Zg — tlocrt",
         "kind": "plan"
       }
     ]
   },
   {
-    "slug": "projekt-cirkovljanska",
-    "name": "Projekt Cirkovljanska",
+    "slug": "projekt-vrbani",
+    "name": "Projekt Vrbani",
     "type": "Apartment",
     "image": portfolio_73.url,
-    "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+    "alt": "Projekt Vrbani — vizualizacija interijera",
     "gallery": [
       {
         "src": portfolio_70.url,
         "width": 404,
         "height": 227,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_71.url,
         "width": 404,
         "height": 227,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_72.url,
         "width": 615,
         "height": 346,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_73.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_74.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_75.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_76.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_77.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_78.url,
         "width": 576,
         "height": 324,
-        "alt": "Projekt Cirkovljanska — vizualizacija interijera",
+        "alt": "Projekt Vrbani — vizualizacija interijera",
         "kind": "render"
       },
       {
         "src": portfolio_79.url,
         "width": 768,
         "height": 432,
-        "alt": "Projekt Cirkovljanska — tlocrt",
+        "alt": "Projekt Vrbani — tlocrt",
         "kind": "plan"
       }
     ]

@@ -12,3 +12,5 @@
 
 - [x] Replace matching Knežija gallery images with ten original uploads and use the first as homepage cover
 - [x] Replace matching Knežija images with the seven additional original uploads
+- [x] Rename projects: Knežija → Projekt Centar, Trnsko → Projekt Novi Zg, Cirkovljanska → Projekt Vrbani
+- [ ] Replace the downloadable portfolio PDF with one using the new project names (current file still says Trnsko / Cirkovljanska)

@@ -9,6 +9,6 @@ describe("portfolio publication requirements", () => {
   it("has seven actual projects and their 65 extracted images", () => {
     assert.equal(projects.length, 7);
     assert.equal(projects.reduce((sum, project) => sum + project.gallery.length, 0), 65);
-    assert.ok(projects.map(project => project.name).includes("Projekt Knežija"));
+    assert.ok(projects.map(project => project.name).includes("Projekt Centar"));
   });
 });

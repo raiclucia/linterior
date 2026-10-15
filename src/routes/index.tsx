@@ -36,7 +36,7 @@ function Home() {
       <section className="relative">
         <img
           src={heroImage}
-          alt="Projekt Knežija — vizualizacija dnevnog boravka"
+          alt="Projekt Centar — vizualizacija dnevnog boravka"
           width={1920}
           height={1088}
           className="h-[68vh] min-h-[420px] w-full object-cover sm:h-[78vh]"
